@@ -1,8 +1,11 @@
 Repositorio grupal - Ingeniería de Software 1 - 2024-2 Grupo 11.
 
 Alejandro Arguello Muñoz
+
 Juan Luis Vergara Novoa
+
 Steven David Alfonso Galindo
+
 Daniel Santiago Delgado Pinilla
 
 EcoScan
