@@ -12,9 +12,9 @@
 ## Objetivo Principal
 Crear una aplicación funcional y bien documentada que facilite el reciclaje mediante el reconocimiento de imágenes y brinde contenido educativo sobre manejo de residuos.
 
-### Estructura del Equipo y Roles Backend (Django)
+## Estructura del Equipo y Roles Backend (Django)
 Desarrollo del servidor, APIs, gestión de la base de datos y lógica de negocio.
-### Frontend (React Native) 
+## Frontend (React Native) 
 Desarrollo de la interfaz de usuario, navegación y consumo de las APIs del backend.
 
 EcoScan es una aplicación móvil gratuita diseñada para asistir a los usuarios en la clasificación adecuada de sus residuos. Utiliza tecnología de reconocimiento de imágenes para identificar objetos y sugerir el contenedor correspondiente para su disposición (reciclaje, orgánico, basura general, etc.), fomentando prácticas de reciclaje y un impacto positivo en el medio ambiente.
