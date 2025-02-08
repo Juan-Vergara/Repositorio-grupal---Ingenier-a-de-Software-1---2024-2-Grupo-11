@@ -3,10 +3,10 @@
 # Repositorio grupal - Ingeniería de Software 1 - 2024-2 Grupo 11.
 
 ## Integrantes 👥
-- Alejandro Arguello Muñoz
-- Juan Luis Vergara Novoa
-- Steven David Alfonso Galindo
-- Daniel Santiago Delgado Pinilla
+- Alejandro Arguello Muñoz - aarguello@unal.edu.co
+- Juan Luis Vergara Novoa - jvergaran@unal.edu.co
+- Steven David Alfonso Galindo - stalfonsog@unal.edu.co
+- Daniel Santiago Delgado Pinilla - ddelgadopi@unal.edu.co
 
 ## Objetivo Principal 🎯
 Crear una aplicación funcional y bien documentada que facilite el reciclaje mediante el reconocimiento de imágenes y brinde contenido educativo sobre manejo de residuos.
