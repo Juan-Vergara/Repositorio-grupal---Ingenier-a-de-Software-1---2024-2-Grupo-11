@@ -1,4 +1,4 @@
-# EcoScan 🚀
+# EcoScan 🗑️
 
 # Repositorio grupal - Ingeniería de Software 1 - 2024-2 Grupo 11.
 
