@@ -23,6 +23,6 @@ EcoScan es una aplicación móvil gratuita diseñada para asistir a los usuarios
 # Tecnologías a utilizadas 🛠️
 - **Backend:** Lenguaje y Frameworks: Python con TensorFlow y OpenCV para el procesamiento de imágenes y reconocimiento de materiales.
 - **APIs y Servicios:** Integración con Firebase Cloud Messaging para notificaciones y Firebase Auth para la autenticación.
-- **Frontend:** Framework: Flutter para el desarrollo de una aplicación móvil multiplataforma (Android, y opcionalmente iOS). UI/UX: Diseño responsivo e intuitivo, basado en las últimas tendencias de diseño para aplicaciones móviles.
-- **Base de Datos y Servicios en la Nube:** Firebase: Para autenticación, almacenamiento de datos (historial de escaneos, perfiles de usuario) y mensajería.
+- **Frontend:** React Native para el desarrollo de una aplicación móvil multiplataforma (Android, y opcionalmente iOS), ofreciendo una interfaz intuitiva y responsiva.
+- **Base de Datos y Servicios en la Nube:** Se utilizará la base de datos por defecto de Django (SQLite) para el almacenamiento de datos durante la fase de desarrollo.
 - **Infraestructura:** Servidores en la nube (por ejemplo, Google Cloud Platform o AWS) para asegurar alta disponibilidad y escalabilidad.
