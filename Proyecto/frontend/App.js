@@ -1,17 +1,35 @@
+// App.js
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import ScanScreen from './src/screens/ScanScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// Importa tus pantallas
+import LoginScreen from './src/screens/LoginScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
+import HomeScreen from './src/screens/HomeScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScanScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="login">
+        <Stack.Screen
+          name="login"
+          component={LoginScreen}
+          options={{ title: 'Iniciar Sesión' }}
+        />
+        <Stack.Screen
+          name="register"
+          component={RegisterScreen}
+          options={{ title: 'Registro' }}
+        />
+        <Stack.Screen
+          name="home"
+          component={HomeScreen}
+          options={{ title: 'Home' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
