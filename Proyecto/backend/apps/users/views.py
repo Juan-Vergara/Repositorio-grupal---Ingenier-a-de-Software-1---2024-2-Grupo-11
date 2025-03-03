@@ -5,6 +5,7 @@ from .serializers import RegisterSerializer
 from django.contrib.auth import authenticate, login, get_user_model
 from rest_framework.authtoken.models import Token
 import logging
+from .models import Usuario
 
 # Configurar logger para depuración
 logger = logging.getLogger(__name__)
@@ -30,58 +31,43 @@ def post(self, request):
 
 class RegisterView(APIView):
     def post(self, request):
+        print("DATOS DE REGISTRO RECIBIDOS:", request.data)
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            user = serializer.save()
+            print(f"USUARIO CREADO: nombre={user.nombre}, email={user.email}")
             return Response({'message': 'Usuario registrado correctamente'}, status=status.HTTP_201_CREATED)
+        
+        print("ERRORES DE REGISTRO:", serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
     def post(self, request):
         try:
-            # Registra la información recibida para depuración
-            logger.info(f"Datos recibidos: {request.data}")
+            print("Datos recibidos:", request.data)
             
-            # Obtener credenciales
             email = request.data.get('email')
             password = request.data.get('password')
             
-            # Validación básica
             if not email or not password:
-                logger.warning(f"Intento de login sin email o password completos")
-                return Response({"error": "Email y contraseña son obligatorios"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Email y contraseña son obligatorios"}, status=400)
             
-            # Verificar si el usuario existe
-            try:
-                user = User.objects.get(email=email)
-                logger.info(f"Usuario encontrado con email: {email}")
-            except User.DoesNotExist:
-                logger.warning(f"No se encontró usuario con email: {email}")
-                return Response({"error": "Credenciales inválidas"}, status=status.HTTP_400_BAD_REQUEST)
+            # Intenta encontrar el usuario sin generar excepción
+            user = Usuario.objects.filter(email=email).first()
             
-            # Intentar autenticar usando el username del usuario encontrado
-            user = authenticate(username=user.username, password=password)
-            
-            if user is not None:
-                # Login exitoso
-                login(request, user)
-                
-                # Crear o recuperar token
-                token, created = Token.objects.get_or_create(user=user)
-                logger.info(f"Login exitoso para usuario: {email}")
-                
-                # Devolver token de acceso
+            if user and user.check_password(password):
+                # Responde sin crear token primero para ver si eso funciona
                 return Response({
-                    "access": token.key,
+                    "access": "token_temporal_de_prueba",
                     "user_id": user.id,
                     "email": user.email
-                }, status=status.HTTP_200_OK)
+                }, status=200)
             else:
-                # Password incorrecto
-                logger.warning(f"Password incorrecto para usuario: {email}")
-                return Response({"error": "Credenciales inválidas"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Credenciales inválidas"}, status=400)
                 
         except Exception as e:
-            # Registrar cualquier excepción no controlada
-            logger.error(f"Error en login: {str(e)}")
-            return Response({"error": "Error en el servidor"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            # Captura cualquier excepción y registra el error completo
+            import traceback
+            print("ERROR COMPLETO:", str(e))
+            print(traceback.format_exc())
+            return Response({"error": "Error en el servidor", "details": str(e)}, status=500)
