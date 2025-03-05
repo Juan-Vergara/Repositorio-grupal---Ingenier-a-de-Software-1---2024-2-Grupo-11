@@ -17,7 +17,7 @@ const RegisterScreen = () => {
     }
 
     try {
-      const response = await fetch('http://192.168.80.62:8000/api/register/', {
+      const response = await fetch('http://172.20.10.9:8000/api/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Asegúrate de que este endpoint sea el correcto en tu backend.
-const API_URL = 'http://192.168.80.62:8000/api/login/';
+const API_URL = 'http://172.20.10.9:8000/api/login/';
 
 const LoginScreen = () => {
   const navigation = useNavigation();

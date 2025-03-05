@@ -52,7 +52,7 @@ const ScanScreen = () => {
 
     try {
       // Cambia la URL según tu entorno. Si usas un emulador de Expo, 127.0.0.1 se resuelve al dispositivo; en ese caso, usa la IP de tu máquina.
-      const response = await fetch('http://192.168.80.62:8000/api/scan/', {
+      const response = await fetch('http://172.20.10.9:8000/api/scan/', {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',

@@ -37,18 +37,18 @@ INDEX_MAPPING = {
 
 # Diccionario que mapea cada etiqueta a un mensaje de contenedor recomendado
 CLASS_TO_CONTAINER = {
-    'battery': 'Contenedor especial para baterías (residuos peligrosos)',
-    'biological': 'Contenedor de residuos biológicos',
-    'brown-glass': 'Contenedor para reciclaje de vidrio marrón',
-    'cardboard': 'Contenedor para reciclaje de cartón',
-    'clothes': 'Contenedor para donación o reciclaje de ropa',
-    'green-glass': 'Contenedor para reciclaje de vidrio verde',
-    'metal': 'Contenedor para reciclaje de metales',
-    'paper': 'Contenedor para reciclaje de papel',
-    'plastic': 'Contenedor para reciclaje de plásticos',
-    'shoes': 'Contenedor para reciclaje o donación de calzado',
-    'trash': 'Contenedor de basura general',
-    'white-glass': 'Contenedor para reciclaje de vidrio blanco'
+    'battery': 'Depósitalo en un punto de recolección de baterías o residuos peligrosos. Nunca en la basura común ni en el reciclaje.',
+    'biological': 'Desecha en un contenedor especial para residuos biológicos o sanitarios. No debe mezclarse con otros residuos.',
+    'brown-glass': 'Depósitalo en el contenedor de VIDRIO (si hay uno específico) o en el reciclaje si solo hay dos opciones.',
+    'cardboard': 'Si está limpio y seco, colócalo en el contenedor de PAPEL/CARTÓN o en RECICLABLES. Si está sucio, tíralo a la basura general.',
+    'clothes': 'Llévalo a un punto de donación de ropa o deposítalo en el contenedor textil, si está disponible. No va en reciclaje común.',
+    'green-glass': 'Colócalo en el contenedor de VIDRIO (verde si hay separación por colores) o en RECICLABLES si solo hay dos opciones.',
+    'metal': 'deposítalo en el contenedor de METALES o en RECICLABLES. Si está contaminado, va a la basura general.',
+    'paper': 'Si está limpio y sin grasa, deposítalo en el contenedor de PAPEL/CARTÓN o en RECICLABLES. Si está sucio, va a la basura común.',
+    'plastic': 'Depósitalo en el contenedor de PLÁSTICOS, o en RECICLABLES si solo hay dos opciones. Limpia los envases antes de reciclar.',
+    'shoes': 'Si están en buen estado, llévalos a un punto de donación. Si están muy dañados, tíralos en la basura general, no en reciclaje.',
+    'trash': 'Desecha en la basura general o en el contenedor de NO RECICLABLES si hay separación en dos tipos.',
+    'white-glass': 'Depósitalo en el contenedor de VIDRIO (blanco si hay separación por colores) o en RECICLABLES si solo hay dos opciones.'
 }
 
 class PredictImageView(APIView):
